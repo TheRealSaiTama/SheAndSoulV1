@@ -388,6 +388,15 @@
     gap: clamp(5px, 2vw, 15px);
   }
 
+  .timer-box {
+    width: clamp(40px, 18vw, 70px);
+    height: clamp(60px, 25vw, 100px);
+  }
+
+  .timer-digit {
+    font-size: clamp(32px, 15vw, 60px);
+  }
+
   .waitlist-box {
     width: 95vw;
     padding: 16px;

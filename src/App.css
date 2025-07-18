@@ -119,3 +119,26 @@ body {
   color: #333;
   font-size: 2rem;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 6rem; /* Adjust font size for tablets */
+  }
+
+  .logo-video {
+    width: 120%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 4.5rem; /* Adjust font size for mobile phones */
+  }
+
+  .logo-video {
+    width: 100%;
+    height: 80%;
+    transform: translate(-50%, -50%); /* Re-center for mobile */
+  }
+}
