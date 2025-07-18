@@ -352,7 +352,8 @@
 
 @media (max-width: 768px) {
   .countdown-container {
-    padding: 24px 16px;
+    justify-content: flex-start;
+    padding: 48px 16px;
   }
 
   .timer-labels {

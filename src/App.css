@@ -121,6 +121,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    overflow: auto; /* Enable scrolling on mobile */
+  }
+
   .title {
     font-size: 6rem; /* Adjust font size for tablets */
   }

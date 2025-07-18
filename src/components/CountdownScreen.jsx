@@ -206,33 +206,33 @@ const CountdownScreen = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            className="social-icon"
-            src="https://api.builder.io/api/v1/image/assets/TEMP/ae0b9f91c16071baa3b5d6c8209736e864a97f3b?width=64"
-            alt="Instagram"
-          />
+        <img
+          className="social-icon"
+          src="https://api.builder.io/api/v1/image/assets/TEMP/ae0b9f91c16071baa3b5d6c8209736e864a97f3b?width=64"
+          alt="Instagram"
+        />
         </a>
         <a
           href="https://x.com/SSoul619"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            className="social-icon"
-            src="https://api.builder.io/api/v1/image/assets/TEMP/44316b68ab8ce93d48a64cc8e474e6fbfedf7826?width=60"
-            alt="X"
-          />
+        <img
+          className="social-icon"
+          src="https://api.builder.io/api/v1/image/assets/TEMP/44316b68ab8ce93d48a64cc8e474e6fbfedf7826?width=60"
+          alt="X"
+        />
         </a>
         <a
           href="https://www.linkedin.com/company/she-soul"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            className="social-icon"
-            src="https://api.builder.io/api/v1/image/assets/TEMP/f1146c8891957d9ff67bcdc085a029a6a65c48b4?width=60"
-            alt="LinkedIn"
-          />
+        <img
+          className="social-icon"
+          src="https://api.builder.io/api/v1/image/assets/TEMP/f1146c8891957d9ff67bcdc085a029a6a65c48b4?width=60"
+          alt="LinkedIn"
+        />
         </a>
       </div>
     </div>
