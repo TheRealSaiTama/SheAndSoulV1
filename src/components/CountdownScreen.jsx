@@ -116,14 +116,8 @@ const CountdownScreen = () => {
       </h2>
 
       <div className="timer-section">
-        <div className="timer-labels">
+        <div className="timer-unit">
           <span className="timer-label">Days</span>
-          <span className="timer-label">Hours</span>
-          <span className="timer-label">Minutes</span>
-          <span className="timer-label">Seconds</span>
-        </div>
-
-        <div className="timer">
           <div className="timer-group">
             <div className="timer-box">
               <span className="timer-digit">{days1}</span>
@@ -132,7 +126,10 @@ const CountdownScreen = () => {
               <span className="timer-digit">{days2}</span>
             </div>
           </div>
+        </div>
 
+        <div className="timer-unit">
+          <span className="timer-label">Hours</span>
           <div className="timer-group">
             <div className="timer-box">
               <span className="timer-digit">{hours1}</span>
@@ -141,7 +138,10 @@ const CountdownScreen = () => {
               <span className="timer-digit">{hours2}</span>
             </div>
           </div>
+        </div>
 
+        <div className="timer-unit">
+          <span className="timer-label">Minutes</span>
           <div className="timer-group">
             <div className="timer-box">
               <span className="timer-digit">{minutes1}</span>
@@ -150,7 +150,10 @@ const CountdownScreen = () => {
               <span className="timer-digit">{minutes2}</span>
             </div>
           </div>
+        </div>
 
+        <div className="timer-unit">
+          <span className="timer-label">Seconds</span>
           <div className="timer-group">
             <div className="timer-box">
               <span className="timer-digit">{seconds1}</span>

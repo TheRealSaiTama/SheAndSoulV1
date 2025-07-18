@@ -44,7 +44,6 @@
 }
 
 .main-title {
-  font-family: "Poppins", sans-serif;
   font-size: 40px;
   font-weight: 300;
   text-align: center;
@@ -61,30 +60,26 @@
 }
 
 .timer-section {
-  margin-bottom: 30px;
-}
-
-.timer-labels {
-  display: flex;
-  justify-content: center;
-  gap: 105px;
-  margin-bottom: 16px;
-}
-
-.timer-label {
-  font-family: "Playfair Display", serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: black;
-  text-align: center;
-  min-width: fit-content;
-}
-
-.timer {
   display: flex;
   justify-content: center;
   gap: 37px;
   flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.timer-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
 }
 
 .timer-group {
