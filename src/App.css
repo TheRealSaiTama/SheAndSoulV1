@@ -1,0 +1,121 @@
+/* Import Google Fonts for matching */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap');
+
+/* Ensure full screen coverage */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* Splash screen styles */
+.splash-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #e0bbff, #9092ff, #e0bbff); /* Extended gradient for shift: light-dark-light */
+  background-size: 200% 100%; /* Double width for sliding/reversing */
+  background-position: 0% 50%; /* Start with left-to-right (light to dark) */
+  transition: opacity 0.5s ease; /* For fade-out to next screen */
+  text-align: center; /* Fallback centering */
+}
+
+/* When transitioning, animate to reverse (dark to light) and stay */
+.splash-screen.transitioning {
+  animation: gradientReverse 0.8s ease-in-out forwards; /* Quick, smooth animation once */
+}
+
+/* Keyframes for gradient shift: slide to reverse direction */
+@keyframes gradientReverse {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%; /* Shift to right (shows dark to light) */
+  }
+}
+
+/* Title styles */
+.title {
+  font-size: 8rem; /* 128px equivalent (assuming 16px base) to match Figma */
+  display: flex;
+  align-items: baseline; /* Align on baseline for better & placement */
+  justify-content: center;
+  margin: 0;
+  line-height: 1; /* Tighten vertical spacing */
+  font-family: 'Playfair Display', serif; /* Apply to entire title */
+  font-weight: 400; /* Regular weight */
+  transition: opacity 0.5s ease-out 0.8s; /* Delay fade-out until after gradient animation */
+}
+
+/* Hide title when video appears */
+.splash-screen.transitioning .title {
+  opacity: 0;
+}
+
+.logo-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%); /* Nudge down for better vertical centering */
+  width: 150%;  /* Increase size for a bigger caricature */
+  height: 130%;
+  object-fit: contain; /* Scale video to fit while maintaining aspect ratio */
+  opacity: 0;
+  transition: opacity 0.8s ease-in 1.3s;
+  mix-blend-mode: darken;
+}
+
+/* Show video when background transition completes */
+.splash-screen.transitioning .logo-video {
+  opacity: 1;
+}
+
+.unmute-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.unmute-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.she, .soul {
+  color: #FFFFFF; /* White as specified */
+}
+
+.amp {
+  color: #000000; /* Black as specified */
+  margin: 0 -0.2rem; /* Slight tighten for better flow in same font */
+}
+
+/* Placeholder for next screen (countdown) */
+.countdown-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3e8ff; /* Light purple for continuity */
+  color: #333;
+  font-size: 2rem;
+}

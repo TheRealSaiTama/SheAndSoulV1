@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Poly:wght@400&display=swap");
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  padding: 24px 20px;
+  background: linear-gradient(90deg, #e0bbff 0.13%, #9092ff 99.87%);
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 400;
+  text-shadow: 0px 4px 6.6px rgba(0, 0, 0, 0.25);
+  margin: 0 0 10px 0;
+  line-height: 1;
+}
+
+.she,
+.soul {
+  color: white;
+}
+
+.amp {
+  color: black;
+}
+
+.subtitle {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(14px, 2.5vw, 20px);
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+
+.main-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(20px, 4vw, 40px);
+  font-weight: 300;
+  text-align: center;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+}
+
+.title-dark {
+  color: black;
+}
+
+.title-light {
+  color: white;
+}
+
+.timer-section {
+  margin-bottom: 30px;
+}
+
+.timer-labels {
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 8vw, 105px);
+  margin-bottom: 16px;
+}
+
+.timer-label {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  min-width: fit-content;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: clamp(15px, 4vw, 37px);
+  flex-wrap: wrap;
+}
+
+.timer-group {
+  display: flex;
+  gap: clamp(4px, 1vw, 5px);
+}
+
+.timer-box {
+  width: clamp(50px, 9vw, 90px);
+  height: clamp(80px, 14vw, 140px);
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timer-digit {
+  font-size: clamp(40px, 9vw, 80px);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background: linear-gradient(180deg, #e0bbff 0%, #9092ff 52.88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.waitlist-box {
+  width: min(916px, 90vw);
+  max-width: 916px;
+  background: rgba(255, 255, 255, 0.39);
+  border-radius: 15px;
+  border: 2px solid #ecd5ff;
+  backdrop-filter: blur(15px);
+  padding: clamp(15px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.5vw, 15px);
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.waitlist-box h3 {
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-family: "Poly", serif;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+  text-align: center;
+}
+
+.waitlist-box p {
+  font-size: clamp(12px, 1.8vw, 14px);
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  margin: 0;
+  max-width: 100%;
+}
+
+.email-form {
+  display: flex;
+  gap: clamp(10px, 2vw, 24px);
+  width: 100%;
+  max-width: 720px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.email-form input {
+  flex: 1;
+  min-width: 250px;
+  height: 58px;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid white;
+  backdrop-filter: blur(2px);
+  padding: 0 20px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: black;
+  box-sizing: border-box;
+}
+
+.email-form input::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+.email-form button {
+  width: clamp(150px, 20vw, 189px);
+  height: 58px;
+  background: linear-gradient(270deg, #e0bbff 0.1%, #9092ff 99.9%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid white;
+  backdrop-filter: blur(2px);
+  color: white;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.refer-button {
+  width: clamp(180px, 25vw, 224px);
+  height: 47px;
+  background: white;
+  border-radius: 10px;
+  border: none;
+  color: #9092ff;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.refer-button.copied {
+  background: #9092ff;
+  color: white;
+  cursor: default;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 124px;
+  height: 32px;
+  margin: 0 auto;
+}
+
+.social-icon {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  filter: invert(1);
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icons a:first-child .social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.social-icons a:nth-child(2) .social-icon,
+.social-icons a:nth-child(3) .social-icon {
+  width: 30px;
+  height: 32px;
+}
+
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border: 2px solid #e0bbff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0px 15px 35px rgba(144, 146, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 350px;
+  min-width: 300px;
+  z-index: 1000;
+  animation: successSlideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animated-tick {
+  margin-bottom: 15px;
+}
+
+.checkmark {
+  width: 60px;
+  height: 60px;
+}
+
+.checkmark-circle {
+  fill: none;
+  stroke: #4caf50;
+  stroke-width: 3;
+  stroke-dasharray: 176;
+  stroke-dashoffset: 176;
+  animation: circle-animation 0.6s ease-in-out forwards;
+}
+
+.checkmark-check {
+  fill: none;
+  stroke: #4caf50;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: check-animation 0.4s ease-in-out 0.6s forwards;
+}
+
+.success-message h4 {
+  font-size: 24px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+  background: linear-gradient(135deg, #9092ff 0%, #e0bbff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.success-message p {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@keyframes successSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) translateY(0);
+  }
+}
+
+@keyframes circle-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes check-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-container {
+    padding: 24px 16px;
+  }
+
+  .timer-labels {
+    gap: clamp(15px, 6vw, 40px);
+  }
+
+  .timer {
+    gap: clamp(8px, 3vw, 20px);
+  }
+
+  .timer-group {
+    gap: 3px;
+  }
+
+  .email-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-form input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .email-form button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer {
+    gap: clamp(5px, 2vw, 15px);
+  }
+
+  .waitlist-box {
+    width: 95vw;
+    padding: 16px;
+  }
+}
