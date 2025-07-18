@@ -45,15 +45,15 @@ body {
 
 /* Title styles */
 .title {
-  font-size: 8rem; /* 128px equivalent (assuming 16px base) to match Figma */
+  font-size: 8rem; /* 128px equivalent */
   display: flex;
-  align-items: baseline; /* Align on baseline for better & placement */
+  align-items: baseline;
   justify-content: center;
   margin: 0;
-  line-height: 1; /* Tighten vertical spacing */
-  font-family: 'Playfair Display', serif; /* Apply to entire title */
-  font-weight: 400; /* Regular weight */
-  transition: opacity 0.5s ease-out 0.8s; /* Delay fade-out until after gradient animation */
+  line-height: 1;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  transition: opacity 0.5s ease-out 0.8s;
 }
 
 /* Hide title when video appears */
@@ -65,10 +65,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%); /* Nudge down for better vertical centering */
-  width: 150%;  /* Increase size for a bigger caricature */
+  transform: translate(-50%, -40%);
+  width: 150%;
   height: 130%;
-  object-fit: contain; /* Scale video to fit while maintaining aspect ratio */
+  object-fit: contain;
   opacity: 0;
   transition: opacity 0.8s ease-in 1.3s;
   mix-blend-mode: darken;
@@ -132,6 +132,7 @@ body {
   .logo-video {
     width: 120%;
     height: 100%;
+    transform: translate(-50%, -50%);
   }
 }
 

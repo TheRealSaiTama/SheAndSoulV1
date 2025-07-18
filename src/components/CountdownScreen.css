@@ -19,7 +19,7 @@
 
 .logo {
   font-family: "Playfair Display", serif;
-  font-size: clamp(40px, 7vw, 80px);
+  font-size: 80px;
   font-weight: 400;
   text-shadow: 0px 4px 6.6px rgba(0, 0, 0, 0.25);
   margin: 0 0 10px 0;
@@ -37,7 +37,7 @@
 
 .subtitle {
   font-family: "Playfair Display", serif;
-  font-size: clamp(14px, 2.5vw, 20px);
+  font-size: 20px;
   font-weight: 400;
   color: black;
   margin: 0;
@@ -45,7 +45,7 @@
 
 .main-title {
   font-family: "Poppins", sans-serif;
-  font-size: clamp(20px, 4vw, 40px);
+  font-size: 40px;
   font-weight: 300;
   text-align: center;
   margin: 0 0 24px 0;
@@ -67,13 +67,13 @@
 .timer-labels {
   display: flex;
   justify-content: center;
-  gap: clamp(20px, 8vw, 105px);
+  gap: 105px;
   margin-bottom: 16px;
 }
 
 .timer-label {
   font-family: "Playfair Display", serif;
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: 20px;
   font-weight: 600;
   color: black;
   text-align: center;
@@ -83,18 +83,18 @@
 .timer {
   display: flex;
   justify-content: center;
-  gap: clamp(15px, 4vw, 37px);
+  gap: 37px;
   flex-wrap: wrap;
 }
 
 .timer-group {
   display: flex;
-  gap: clamp(4px, 1vw, 5px);
+  gap: 5px;
 }
 
 .timer-box {
-  width: clamp(50px, 9vw, 90px);
-  height: clamp(80px, 14vw, 140px);
+  width: 90px;
+  height: 140px;
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -105,7 +105,7 @@
 }
 
 .timer-digit {
-  font-size: clamp(40px, 9vw, 80px);
+  font-size: 80px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   background: linear-gradient(180deg, #e0bbff 0%, #9092ff 52.88%);
@@ -116,24 +116,24 @@
 }
 
 .waitlist-box {
-  width: min(916px, 90vw);
+  width: 90%;
   max-width: 916px;
   background: rgba(255, 255, 255, 0.39);
   border-radius: 15px;
   border: 2px solid #ecd5ff;
   backdrop-filter: blur(15px);
-  padding: clamp(15px, 2vw, 24px);
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(10px, 1.5vw, 15px);
+  gap: 15px;
   margin-bottom: 24px;
   box-sizing: border-box;
 }
 
 .waitlist-box h3 {
-  font-size: clamp(20px, 3.5vw, 32px);
+  font-size: 32px;
   font-family: "Poly", serif;
   font-weight: 400;
   color: black;
@@ -142,7 +142,7 @@
 }
 
 .waitlist-box p {
-  font-size: clamp(12px, 1.8vw, 14px);
+  font-size: 14px;
   font-family: "Playfair Display", serif;
   font-weight: 400;
   color: black;
@@ -153,7 +153,7 @@
 
 .email-form {
   display: flex;
-  gap: clamp(10px, 2vw, 24px);
+  gap: 24px;
   width: 100%;
   max-width: 720px;
   flex-wrap: wrap;
@@ -183,7 +183,7 @@
 }
 
 .email-form button {
-  width: clamp(150px, 20vw, 189px);
+  width: 189px;
   height: 58px;
   background: linear-gradient(270deg, #e0bbff 0.1%, #9092ff 99.9%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -199,7 +199,7 @@
 }
 
 .refer-button {
-  width: clamp(180px, 25vw, 224px);
+  width: 224px;
   height: 47px;
   background: white;
   border-radius: 10px;
@@ -356,17 +356,16 @@
     padding: 48px 16px;
   }
 
-  .timer-labels {
-    gap: clamp(15px, 6vw, 40px);
-  }
-
-  .timer {
-    gap: clamp(8px, 3vw, 20px);
-  }
-
-  .timer-group {
-    gap: 3px;
-  }
+  .logo { font-size: 60px; }
+  .subtitle { font-size: 18px; }
+  .main-title { font-size: 32px; }
+  .timer-labels { gap: 40px; }
+  .timer-label { font-size: 18px; }
+  .timer { gap: 20px; }
+  .timer-box { width: 70px; height: 100px; }
+  .timer-digit { font-size: 60px; }
+  .waitlist-box h3 { font-size: 28px; }
+  .waitlist-box p { font-size: 14px; }
 
   .email-form {
     flex-direction: column;
@@ -385,21 +384,14 @@
 }
 
 @media (max-width: 480px) {
-  .timer {
-    gap: clamp(5px, 2vw, 15px);
-  }
-
-  .timer-box {
-    width: clamp(40px, 18vw, 70px);
-    height: clamp(60px, 25vw, 100px);
-  }
-
-  .timer-digit {
-    font-size: clamp(32px, 15vw, 60px);
-  }
-
-  .waitlist-box {
-    width: 95vw;
-    padding: 16px;
-  }
+  .logo { font-size: 48px; }
+  .subtitle { font-size: 16px; }
+  .main-title { font-size: 24px; }
+  .timer-labels { gap: 20px; }
+  .timer-label { font-size: 14px; }
+  .timer { gap: 10px; }
+  .timer-box { width: 60px; height: 80px; }
+  .timer-digit { font-size: 48px; }
+  .waitlist-box h3 { font-size: 24px; }
+  .waitlist-box p { font-size: 12px; }
 }
