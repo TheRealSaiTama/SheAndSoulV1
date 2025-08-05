@@ -53,35 +53,13 @@ const CountdownScreen = () => {
       return;
     }
 
-    const isDevelopment = import.meta.env.DEV;
-    const apiUrl = isDevelopment 
-      ? 'http://localhost:3001/api/send-email'
-      : '/.netlify/functions/send-email';
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setEmail("");
-        }, 4000);
-      } else {
-        alert(result.error || 'Failed to join waitlist. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Network error. Please check your connection and try again.');
-    }
+    // With Netlify forms, we don't need the API call anymore
+    // Netlify will handle the form submission automatically
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setEmail("");
+    }, 4000);
   };
 
   useEffect(() => {
@@ -171,9 +149,12 @@ const CountdownScreen = () => {
           Be the first to experience the She & Soul app — wellness, self-care,
           and empowerment in one space
         </p>
-        <form className="email-form" onSubmit={handleSubmit}>
+        <form className="email-form" onSubmit={handleSubmit} data-netlify="true" name="waitlist">
+          {/* Add a hidden input for Netlify form handling */}
+          <input type="hidden" name="form-name" value="waitlist" />
           <input
             type="email"
+            name="email" // Add name attribute
             placeholder="Enter Email"
             value={email}
             onChange={handleEmailChange}
