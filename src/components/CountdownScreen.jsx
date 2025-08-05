@@ -44,36 +44,29 @@ const CountdownScreen = () => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!emailRegex.test(email)) {
       alert("Please enter a valid email address.");
       return;
     }
 
     try {
-      const response = await fetch('/.netlify/functions/waitlist-submission', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email })
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ "form-name": "waitlist", email }).toString(),
       });
-      const result = await response.json();
-      if (response.ok && result.success) {
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setEmail("");
-        }, 4000);
-      } else {
-        alert(result.error || 'There was an error submitting your email. Please try again.');
-      }
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setEmail("");
+      }, 4000);
     } catch (error) {
-      console.error('Form submission error:', error);
-      alert('There was an error submitting your email. Please try again.');
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your email. Please try again.");
     }
   };
 
@@ -164,12 +157,16 @@ const CountdownScreen = () => {
           Be the first to experience the She & Soul app — wellness, self-care,
           and empowerment in one space
         </p>
-        <form
+<form
+          name="waitlist"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
           className="email-form"
           onSubmit={handleSubmit}
-          action="/.netlify/functions/waitlist-submission"
+          action="/"
           method="POST"
         >
+          <input type="hidden" name="form-name" value="waitlist" />
           <input
             type="email"
             name="email"
