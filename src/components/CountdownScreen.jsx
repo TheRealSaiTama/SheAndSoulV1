@@ -178,7 +178,7 @@ const CountdownScreen = () => {
           />
           <button type="submit">Join Waitlist</button>
         </form>
-      </dix>
+        </div>
 
       {isSubmitted && (
         <div className="success-message">
