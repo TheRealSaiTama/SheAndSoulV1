@@ -53,13 +53,26 @@ const CountdownScreen = () => {
       return;
     }
 
-    // With Netlify forms, we don't need the API call anymore
-    // Netlify will handle the form submission automatically
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setEmail("");
-    }, 4000);
+    try {
+      const formData = new FormData(e.target);
+      const response = await fetch('/.netlify/functions/waitlist-submission', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setEmail("");
+        }, 4000);
+      } else {
+        alert(result.error || 'There was an error submitting your email. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your email. Please try again.');
+    }
   };
 
   useEffect(() => {
@@ -149,15 +162,19 @@ const CountdownScreen = () => {
           Be the first to experience the She & Soul app — wellness, self-care,
           and empowerment in one space
         </p>
-        <form className="email-form" onSubmit={handleSubmit} data-netlify="true" name="waitlist">
-          {/* Add a hidden input for Netlify form handling */}
-          <input type="hidden" name="form-name" value="waitlist" />
+        <form
+          className="email-form"
+          onSubmit={handleSubmit}
+          action="/.netlify/functions/waitlist-submission"
+          method="POST"
+        >
           <input
             type="email"
-            name="email" // Add name attribute
+            name="email"
             placeholder="Enter Email"
             value={email}
             onChange={handleEmailChange}
+            required
           />
           <button type="submit">Join Waitlist</button>
         </form>
