@@ -23,6 +23,8 @@ const CountdownScreen = () => {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [copied, setCopied] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleReferClick = () => {
     navigator.clipboard.writeText(window.location.href).then(
@@ -36,6 +38,36 @@ const CountdownScreen = () => {
         console.error("Failed to copy: ", err);
       }
     );
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch('/.netlify/functions/addToSheet', {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ "form-name": "waitlist", email }).toString(),
+      });
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setEmail("");
+      }, 4000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your email. Please try again.");
+    }
   };
 
 
@@ -133,19 +165,33 @@ const CountdownScreen = () => {
           data-netlify="true"
           netlify-honeypot="bot-field"
           className="email-form"
-          action="/"
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="waitlist" />
           <input
             type="email"
             name="email"
             placeholder="Enter Email"
+            value={email}
+            onChange={handleEmailChange}
             required
           />
           <button type="submit">Join Waitlist</button>
         </form>
-      </div>
+      </dix>
 
+      {isSubmitted && (
+        <div className="success-message">
+          <div className="animated-tick">
+            <svg width="60" height="60" viewBox="0 0 60 60" className="checkmark">
+              <circle className="checkmark-circle" cx="30" cy="30" r="28" />
+              <path className="checkmark-check" d="M16 30l8 8 20-20" />
+            </svg>
+          </div>
+          <h4>Success!</h4>
+          <p>Thank you for joining our waitlist. We'll keep you updated on our launch progress!</p>
+        </div>
+      )}
 
       <button
         className={`refer-button ${copied ? "copied" : ""}`}
