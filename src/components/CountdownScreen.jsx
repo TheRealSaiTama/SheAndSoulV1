@@ -55,9 +55,9 @@ const CountdownScreen = () => {
 
     try {
       const response = await fetch('/.netlify/functions/addToSheet', {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ "form-name": "waitlist", email }).toString(),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
       setIsSubmitted(true);
       setTimeout(() => {
