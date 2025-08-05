@@ -54,10 +54,12 @@ const CountdownScreen = () => {
     }
 
     try {
-      const formData = new FormData(e.target);
       const response = await fetch('/.netlify/functions/waitlist-submission', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
       });
       const result = await response.json();
       if (response.ok && result.success) {

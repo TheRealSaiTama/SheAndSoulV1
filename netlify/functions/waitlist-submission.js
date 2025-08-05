@@ -122,16 +122,8 @@ exports.handler = async (event) => {
   }
 
   try {
-    // Parse the form data
-    let email = null;
-    if (event.headers['content-type'] && event.headers['content-type'].includes('multipart/form-data')) {
-      // Netlify will parse multipart and put fields in event.body as an object
-      email = event.body.email;
-    } else {
-      // For x-www-form-urlencoded
-      const formData = new URLSearchParams(event.body);
-      email = formData.get('email');
-    }
+    // Parse JSON body sent from frontend
+    const { email } = JSON.parse(event.body || '{}');
 
     // Validate email
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
